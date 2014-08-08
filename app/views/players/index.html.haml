@@ -1,6 +1,6 @@
 .panel.panel-default
   .panel-heading 
-    %h2 Listing players
+    %h2.text-center Listing players
     .text-right
       %a.btn.btn-sm.btn-primary{:href =>new_player_path} New Player
    
@@ -8,8 +8,6 @@
   %table.table.table-striped.table-bordered
     %tr
       %th Name
-      %th Surname
-      %th Nickname
       %th Phone
       %th Skype
       %th Email
@@ -17,16 +15,12 @@
 
     - @players.each do |player|
       %tr
-        %td= player.name
-        %td= player.surname
-        %td= player.nickname
+        %td= player.full_name
+       
         %td= player.phone
         %td= player.skype
         %td= player.email
         %td
           .btn-toolbar.text-center
-
-            %a.btn.btn-sm.btn-primary{:href => player_path(player.id)} Show
             %a.btn.btn-sm.btn-primary{:href => edit_player_path(player)} Edit
             %a.btn.btn-sm.btn-danger{:href =>player_path(player.id), :data =>{:method => :delete, :confirm => 'Are you sure?' }} Destroy
-
