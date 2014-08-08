@@ -1,0 +1,6 @@
+en:
+  views:
+    common:
+      show: "Show"
+      edit: "Edit"
+      delete: "Delete"

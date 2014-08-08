@@ -1,0 +1,6 @@
+ru:
+  views:
+    common:
+      show: "Просмотреть"
+      edit: "Изменить"
+      delete: "Удалить"

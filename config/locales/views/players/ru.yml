@@ -1,0 +1,11 @@
+ru:
+  views:
+    players:
+      squad: "Состав"
+      new: "Добавить игрока"
+      name: "Имя"
+      surname: "Фамилия"
+      nickname: "Прозвище"
+      phone: "Телефон"
+      skype: "Skype"
+      email: "Email"

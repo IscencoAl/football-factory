@@ -1,0 +1,11 @@
+en:
+  views:
+    players:
+      squad: "Squad"
+      new: "New Players"
+      name: "Name"
+      surname: "Surname"
+      nickname: "Nickname"
+      phone: "Phone"
+      skype: "Skype"
+      email: "Email"
