@@ -5,6 +5,6 @@
   - when 'notice'
     - type = 'warning'
 
-  =render "message", :type => type, :message => message
+  =render "layouts/message", :type => type, :message => message
 
 - flash.discard

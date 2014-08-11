@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :events
     resources :players
     get '/events/:id/add_player' => 'events#add_player'
+    delete '/events/:id/remove_player' => 'events#remove_player'
   end
 
   devise_for :users
@@ -11,7 +12,5 @@ Rails.application.routes.draw do
   root 'players#index'
 
   get '/:locale' => 'players#index'
-
-
   
 end
