@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  scope "(:locale)", locale: ["en"] do
+  scope "/:locale" do
     resources :players
   end
 

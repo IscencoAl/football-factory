@@ -1,28 +1,13 @@
-= form_for @player do |f|
-  - if @player.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@player.errors.count, "error")} prohibited this player from being saved:"
-      %ul
-        - @player.errors.full_messages.each do |msg|
-          %li= msg
+= form_for(@player, :builder => BootstrapHorizontalFormBuilder, :html => {:class => 'form-horizontal'}) do |f|
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :surname
-    = f.text_field :surname
-  .field
-    = f.label :nickname
-    = f.text_field :nickname
-  .field
-    = f.label :phone
-    = f.text_field :phone
-  .field
-    = f.label :skype
-    = f.text_field :skype
-  .field
-    = f.label :email
-    = f.text_field :email
-  .actions
-    = f.submit 'Save'
+  = f.input_form_group(:name, {:label => {:class=> "col-sm-3"}, :text_field_wrapper => {:class => "col-sm-6"}})
+  = f.input_form_group(:surname, {:label => {:class=> "col-sm-3"}, :text_field_wrapper => {:class => "col-sm-6"}})
+  = f.input_form_group(:nickname, {:label => {:class=> "col-sm-3"}, :text_field_wrapper => {:class => "col-sm-6"}})
+  = f.input_form_group(:phone, {:label => {:class=> "col-sm-3"}, :text_field_wrapper => {:class => "col-sm-6"}})
+  = f.input_form_group(:skype, {:label => {:class=> "col-sm-3"}, :text_field_wrapper => {:class => "col-sm-6"}})
+  = f.input_form_group(:email, {:label => {:class=> "col-sm-3"}, :text_field_wrapper => {:class => "col-sm-6"}})
+
+  .form-group 
+    .col-sm-12.text-center
+      = f.submit t('views.common.save'), :class => "btn btn-sm btn-primary"
+      %a.btn.btn-sm.btn-default{:href=> players_path(locale)}= t('views.common.back')

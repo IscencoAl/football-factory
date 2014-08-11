@@ -42,7 +42,8 @@ class PlayersController < ApplicationController
   def update
     respond_to do |format|
       if @player.update(player_params)
-        format.html { redirect_to @player, notice: 'Player was successfully updated.' }
+        flash[:success] = 'Player was successfully updated.'
+        format.html { redirect_to players_url(locale) }
         format.json { render :show, status: :ok, location: @player }
       else
         format.html { render :edit }
@@ -69,6 +70,6 @@ class PlayersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def player_params
-      params.require(:player).permit(:name, :surname, :nickname, :phone, :skype, :email)
+      params.require(:player).permit(:name, :surname, :nickname, :phone, :skype, :email, :locale)
     end
 end

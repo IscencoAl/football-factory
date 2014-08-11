@@ -6,28 +6,22 @@
       .col-sm-2.text-right
         %br
         %a.btn.btn-sm.btn-primary{:href =>new_player_path}= t('views.players.new')
-   
 
   %table.table.table-striped
     %tr
-      %th= t('views.players.name')
-      %th= t('views.players.surname')
-      %th= t('views.players.nickname')
-      %th= t('views.players.phone')
-      %th= t('views.players.skype')
-      %th= t('views.players.email')
+      %th= t('activerecord.attributes.player.name')
+      %th= t('activerecord.attributes.player.phone')
+      %th= t('activerecord.attributes.player.skype')
+      %th= t('activerecord.attributes.player.email')
       %th
 
     - @players.each do |player|
       %tr
-        %td= player.name
-        %td= player.surname
-        %td= player.nickname
+        %td= player.full_name
         %td= player.phone
         %td= player.skype
         %td= player.email
         %td
           .btn-toolbar.text-right
-            %a.btn.btn-sm.btn-primary{:href => player_path(locale, player.id)}= t('views.common.show')
-            %a.btn.btn-sm.btn-primary{:href => edit_player_path(locale, player)}= t('views.common.edit')
-            %a.btn.btn-sm.btn-danger{:href => player_path(locale, player.id), :data => {:method => :delete, :confirm => 'Are you sure?' }}= t('views.common.delete')
+            %a.btn.btn-sm.btn-primary{:href => edit_player_path(player)}= t('views.common.edit')
+            %a.btn.btn-sm.btn-danger{:href => player_path(player.id), :data => {:method => :delete, :confirm => 'Are you sure?' }}= t('views.common.delete')

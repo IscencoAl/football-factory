@@ -1,0 +1,10 @@
+- flash.each do |type, message|
+  - case type.to_s
+  - when 'alert'
+    - type = 'warning'
+  - when 'notice'
+    - type = 'warning'
+
+  %div{:class => "alert alert-#{type}"}= message
+
+- flash.discard

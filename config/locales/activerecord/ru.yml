@@ -1,0 +1,25 @@
+ru:
+  activerecord:
+    models:
+      player: "Игрок"
+
+    attributes:
+      player:
+        name: "Имя"
+        surname: "Фамилия"
+        phone: "Телефон"
+        nickname: "Прозвище"
+        skype: "Skype"
+        email: "Email"
+
+    errors:
+      models:
+        player:
+          attributes:
+            name:
+              blank: "не может быть пустым"
+            surname:
+              blank: "не может быть пустой"
+            phone:
+              blank: "не может быть пустым"
+              taken: "%{value} закреплен за другим игроком"
