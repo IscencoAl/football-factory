@@ -5,6 +5,6 @@
   - when 'notice'
     - type = 'warning'
 
-  %div{:class => "alert alert-#{type}"}= message
+  =render "message", :type => type, :message => message
 
 - flash.discard

@@ -10,6 +10,7 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    @players = @event.players
   end
 
   # GET /events/new
@@ -59,6 +60,21 @@ class EventsController < ApplicationController
       format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  # GET /events/1/add_player
+  def add_player
+    @event_player = EventPlayer.new({:event_id => params[:id], :player_id => params[:player_id]})
+    @player = Player.find_by_id(params[:player_id])
+
+    respond_to do |format|
+      if @event_player.save
+        format.js
+      else
+        format.js { render :add_player_error }
+      end
+    end
+ 
   end
 
   private

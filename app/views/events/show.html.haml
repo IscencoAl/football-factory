@@ -1,18 +1,32 @@
-%p#notice= notice
+.panel.panel-default
+  .panel-heading
+    .row
+      %h2.text-center= @event.name
+    .row
+      .col-sm-4
+        %strong Start Time:
+        =@event.start_time.strftime("%m.%d.%Y %H:%M")
+      .col-sm-4.text-center
+        %strong End Time:
+        =@event.end_time.strftime("%m.%d.%Y %H:%M")
+      .col-sm-4.text-right
+        %strong Price:
+        =@event.price
+  .panel-body
+    .row
+      %form{:action => "#{event_path(@event)}/add_player", :method => "GET", :data => {:remote => true}}
+        .col-sm-10
+          %select.select.form-control{:name => "player_id"}
+            -Player.all.each do |p|
+              %option{:value => p.id}=p.full_name
+        .col-sm-2.text-right
+          %input.btn.btn-primary{:type => "submit", :value => "Add"}
 
-%p
-  %b Name:
-  = @event.name
-%p
-  %b Start time:
-  = @event.start_time
-%p
-  %b End time:
-  = @event.end_time
-%p
-  %b Price:
-  = @event.price
-
-= link_to 'Edit', edit_event_path(@event)
-\|
-= link_to 'Back', events_path
+  %table.table.table-striped#players-list
+    %thead
+      %tr
+        %th Name
+        %th
+    %tbody
+      -@players.each do |p|
+        =render "player_row", :player => p

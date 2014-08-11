@@ -1,0 +1,4 @@
+%tr
+  %td= player.full_name
+  %td.text-right
+    %a.btn.btn-danger{:href => player_path(player.id), :data =>{:method => :delete}} Delete
