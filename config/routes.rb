@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   scope "/:locale" do
+    resources :events
     resources :players
   end
 
@@ -9,4 +10,5 @@ Rails.application.routes.draw do
   root 'players#index'
 
   get '/:locale' => 'players#index'
+  
 end

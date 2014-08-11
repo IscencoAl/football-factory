@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  start_time: 2014-08-11 09:04:29
+  end_time: 2014-08-11 09:04:29
+  price: 1
+
+two:
+  name: MyText
+  start_time: 2014-08-11 09:04:29
+  end_time: 2014-08-11 09:04:29
+  price: 1
