@@ -8,6 +8,6 @@
 
   .form-group 
     .col-sm-12.text-center
-      = f.submit 'Save', :class => "btn btn-sm btn-primary"
-      %a.btn.btn-sm.btn-default{:href=> events_path} Back
+      = f.submit t('views.common.save'), :class => "btn btn-sm btn-primary"
+      %a.btn.btn-sm.btn-default{:href=> events_path}= t('views.common.back')
 

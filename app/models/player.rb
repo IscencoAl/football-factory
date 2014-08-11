@@ -1,7 +1,8 @@
 class Player < ActiveRecord::Base
   validates :name, :surname, :phone, presence: true
   validates :phone, uniqueness: true
-  # has_many :event_players
+  
+  has_many :event_players, :dependent => :delete_all
   has_many :events, through: :event_players
 
   attr

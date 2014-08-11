@@ -1,0 +1,6 @@
+en:
+  controllers:
+    players:
+      created: "Player '%{name}' was successfully created"
+      updated: "Player '%{name}' was successfully updated"
+      destroyed: "Player '%{name}' was successfully destroyed"

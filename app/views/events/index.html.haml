@@ -1,15 +1,18 @@
 .panel.panel-default
-  .panel-heading 
-    %h2.text-center Listing events
-    .text-right
-      %a.btn.btn-sm.btn-primary{:href =>new_event_path} New Event
+  .panel-heading
+    .row
+      .col-sm-10
+        %h2= t('views.events.list')
+      .col-sm-2.text-right
+        %br
+        %a.btn.btn-sm.btn-primary{:href =>new_event_path}= t('views.events.new')
 
   %table.table.table-striped.table-bordered
     %tr
-      %th Name
-      %th Start time
-      %th End time
-      %th Price
+      %th= t('activerecord.attributes.event.name')
+      %th= t('activerecord.attributes.event.start_time')
+      %th= t('activerecord.attributes.event.end_time')
+      %th= t('activerecord.attributes.event.price')
       %th
    
 
@@ -21,8 +24,8 @@
         %td= event.price
         %td
           .btn-toolbar.text-center
-            %a.btn.btn-sm.btn-primary{:href => edit_event_path(event)} Edit
-            %a.btn.btn-sm.btn-danger{:href => event_path(event.id), :data =>{:method => :delete, :confirm => 'Are you sure?' }} Destroy
+            %a.btn.btn-sm.btn-primary{:href => edit_event_path(event)}= t('views.common.edit')
+            %a.btn.btn-sm.btn-danger{:href => event_path(event.id), :data =>{:method => :delete, :confirm => 'Are you sure?' }}= t('views.common.delete')
 
 
 
