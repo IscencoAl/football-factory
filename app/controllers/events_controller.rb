@@ -1,10 +1,10 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :add_player]
 
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @events = Event.order(:start_time).all
   end
 
   # GET /events/1
@@ -68,6 +68,7 @@ class EventsController < ApplicationController
   def add_player
     @event_player = EventPlayer.new({:event_id => params[:id], :player_id => params[:player_id]})
     @player = Player.find_by_id(params[:player_id])
+    @number = @event.players.count+1
 
     respond_to do |format|
       if @event_player.save
@@ -78,6 +79,17 @@ class EventsController < ApplicationController
     end
  
   end
+
+  # GET /events/1/remove_player
+  def remove_player
+    @event_player = EventPlayer.where({:event_id => params[:id], :player_id => params[:player_id]}).take
+    @event_player.destroy
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

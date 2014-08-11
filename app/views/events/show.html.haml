@@ -25,8 +25,11 @@
   %table.table.table-striped#players-list
     %thead
       %tr
+        %th №
         %th Name
         %th
     %tbody
+      -i = 0
       -@players.each do |p|
-        =render "player_row", :player => p
+        -i+=1
+        =render "player_row", :player => p, :number => i

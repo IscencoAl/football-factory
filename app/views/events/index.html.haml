@@ -18,9 +18,10 @@
 
     - @events.each do |event|
       %tr
-        %td= event.name
-        %td= event.start_time.strftime("%m.%d.%Y %H:%M")
-        %td= event.end_time.strftime("%m.%d.%Y %H:%M")
+        %td
+          %a{:href =>event_path(event.id) }= event.name
+        %td= event.start_time.strftime("%m.%d.%Y %H:%M  %A")
+        %td= event.end_time.strftime("%m.%d.%Y %H:%M  %A")
         %td= event.price
         %td
           .btn-toolbar.text-center

@@ -1,2 +1,2 @@
 :plain
-  $("#{escape_javascript(render "player_row", :player => @player)}").appendTo("#players-list tbody");
+  $("#{escape_javascript(render "player_row", :player => @player, :number =>@number)}").appendTo("#players-list tbody");
