@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :events
+
   resources :players
 
   devise_for :users

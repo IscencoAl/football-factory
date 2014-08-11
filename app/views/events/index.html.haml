@@ -1,0 +1,31 @@
+.panel.panel-default
+  .panel-heading 
+    %h2.text-center Listing events
+    .text-right
+      %a.btn.btn-sm.btn-primary{:href =>new_event_path} New Event
+
+  %table.table.table-striped.table-bordered
+    %tr
+      %th Name
+      %th Start time
+      %th End time
+      %th Price
+      %th
+   
+
+    - @events.each do |event|
+      %tr
+        %td= event.name
+        %td= event.start_time
+        %td= event.end_time
+        %td= event.price
+        %td
+          .btn-toolbar.text-center
+            %a.btn.btn-sm.btn-primary{:href => edit_event_path(event)} Edit
+            %a.btn.btn-sm.btn-danger{:href => event_path(event.id), :data =>{:method => :delete, :confirm => 'Are you sure?' }} Destroy
+
+
+
+    
+
+
