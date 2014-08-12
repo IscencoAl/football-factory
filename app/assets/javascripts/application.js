@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//  require turbolinks
+//= require twitter/bootstrap/alert
 //= require_tree .
+
