@@ -2,4 +2,4 @@
   %td= number
   %td= player.full_name
   %td.text-right
-    %a.btn.btn-danger{:href => "#{event_path(@event)}/remove_player?player_id=#{player.id}", :data =>{:method => :delete, :remote => true}} Delete
+    %a.btn.btn-danger{:href => "#{event_path(@event)}/remove_player?player_id=#{player.id}", :data =>{:method => :delete, :remote => true}}= t('views.common.delete')

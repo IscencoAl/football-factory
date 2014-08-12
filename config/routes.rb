@@ -9,8 +9,8 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  root 'players#index'
+  root 'events#index'
 
-  get '/:locale' => 'players#index'
+  get '/:locale' => 'events#index'
   
 end

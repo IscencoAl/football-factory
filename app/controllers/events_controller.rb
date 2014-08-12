@@ -77,7 +77,6 @@ class EventsController < ApplicationController
         format.js { render :add_player_error }
       end
     end
- 
   end
 
   # GET /events/1/remove_player
