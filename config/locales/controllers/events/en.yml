@@ -1,0 +1,7 @@
+en:
+  controllers:
+    events:
+      created: "Match was successfully created"
+      updated: "Match was successfully updated"
+      destroyed: "Match was successfully destroyed"
+      already_added: "%{name} is already added to this match"

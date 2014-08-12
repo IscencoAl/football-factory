@@ -2,6 +2,7 @@ ru:
   activerecord:
     models:
       player: "Игрок"
+      event: "Матч"
 
     attributes:
       player:
@@ -11,6 +12,12 @@ ru:
         nickname: "Прозвище"
         skype: "Skype"
         email: "Email"
+
+      event:
+        name: "Название"
+        start_time: "Начало матча"
+        end_time: "Конец матча"
+        price: "Цена"
 
     errors:
       models:
@@ -23,3 +30,15 @@ ru:
             phone:
               blank: "не может быть пустым"
               taken: "%{value} закреплен за другим игроком"
+
+        event:
+          attributes:
+            name:
+              blank: "не может быть пустым"
+            start_time:
+              blank: "должно быть задано"
+              taken: "'%{value}' уже занято"
+            end_time:
+              blank: "должен быть задан"
+            price:
+              blank: "не может отсутствовать"

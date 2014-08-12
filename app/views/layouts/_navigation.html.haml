@@ -5,6 +5,12 @@
 
     %ul.nav.navbar-nav
       %li{:class => ("active" if params[:controller] == 'events')}
-        %a{:href => events_path} Events
+        %a{:href => events_path}= t('views.events.list')
       %li{:class => ("active" if params[:controller] == 'players')}
-        %a{:href => players_path} Players
+        %a{:href => players_path}= t('views.players.squad')
+
+    %ul.nav.navbar-nav.navbar-right
+      %li{:class => ("active" if locale == :ru)}
+        =link_to 'Ru', :locale => :ru
+      %li{:class => ("active" if locale == :en)}
+        =link_to 'En', :locale => :en

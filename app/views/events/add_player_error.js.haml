@@ -1,2 +1,2 @@
 :plain
-  $("#{escape_javascript(render "layouts/message", :type => 'danger', :message => @player.full_name + ' is allready added to this event')}").prependTo("body > .container");
+  $("#{escape_javascript(render "layouts/message", :type => 'danger', :message => t('controllers.events.already_added', :name => @player.full_name))}").prependTo("body > .container");

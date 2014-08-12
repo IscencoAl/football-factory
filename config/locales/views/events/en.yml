@@ -1,0 +1,6 @@
+en:
+  views:
+    events:
+      list: "Matches"
+      new: "Add Match"
+      edit: "Edit Match"

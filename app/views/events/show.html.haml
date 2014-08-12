@@ -4,13 +4,13 @@
       %h2.text-center= @event.name
     .row
       .col-sm-4
-        %strong Start Time:
+        %strong= "#{t('activerecord.attributes.event.start_time')}:"
         =@event.start_time.strftime("%m.%d.%Y %H:%M")
       .col-sm-4.text-center
-        %strong End Time:
+        %strong= "#{t('activerecord.attributes.event.end_time')}:"
         =@event.end_time.strftime("%m.%d.%Y %H:%M")
       .col-sm-4.text-right
-        %strong Price:
+        %strong= "#{t('activerecord.attributes.event.price')}:"
         =@event.price
   .panel-body
     .row
@@ -20,16 +20,16 @@
             -Player.all.each do |p|
               %option{:value => p.id}=p.full_name
         .col-sm-2.text-right
-          %input.btn.btn-primary{:type => "submit", :value => "Add"}
+          %input.btn.btn-primary{:type => "submit", :value => t('views.common.add')}
 
-  %table.table.table-striped#players-list
+  %table.table.table-striped.table-vcentered#players-list
     %thead
       %tr
         %th №
-        %th Name
+        %th= t('activerecord.attributes.player.name')
         %th
     %tbody
       -i = 0
       -@players.each do |p|
-        -i+=1
+        -i += 1
         =render "player_row", :player => p, :number => i

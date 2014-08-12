@@ -1,0 +1,6 @@
+ru:
+  controllers:
+    players:
+      created: "Игрок '%{name}' был успешно создан"
+      updated: "Информация об игроке '%{name}' была успешно обновлена"
+      destroyed: "Игрок '%{name}' был успешно удален"
