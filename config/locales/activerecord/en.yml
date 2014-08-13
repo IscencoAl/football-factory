@@ -1,0 +1,20 @@
+en:
+  activerecord:
+    models:
+      player: "Player"
+      event: "Match"
+
+    attributes:
+      player:
+        name: "Name"
+        surname: "Surname"
+        phone: "Phone"
+        nickname: "Nickname"
+        skype: "Skype"
+        email: "Email"
+
+      event:
+        name: "Name"
+        start_time: "Beginning of match"
+        end_time: "End of match"
+        price: "Price"
