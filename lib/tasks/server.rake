@@ -16,7 +16,7 @@ namespace :server do
   desc 'server start'
   task :start do
     print "Starting rails server on port 4400"
-    system "nohup rails s -p 4400 &"
+    system "rails s -p 4400"
   end
 
 end

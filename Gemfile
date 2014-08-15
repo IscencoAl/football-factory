@@ -37,6 +37,10 @@ gem 'haml-rails', '~> 0.5.3'
 
 # Use Capistrano for deployment
 gem 'capistrano', group: :development
+gem 'capistrano-rails', group: :development
+gem 'capistrano-rvm', group: :development
+
+gem 'passenger', group: :production
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]

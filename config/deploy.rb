@@ -34,25 +34,22 @@ set :deploy_to, '/home/dvm/Projects/football-factory'
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
+# Ruby version
+set :rvm_ruby_version, 'ruby-2.1.1'
+
 namespace :deploy do
 
   desc 'Restart application'
   task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      execute :rake, 'server:stop'
-      execute :rake, 'server:start'
+    on roles(:app) do
+      within current_path do
+        # execute :rake, 'server:stop'
+        # execute :rake, "server:start"
+        execute :touch, current_path.join('tmp/restart.txt')
+      end
     end
   end
 
   after :publishing, :restart
-
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
-    end
-  end
-
+  
 end
