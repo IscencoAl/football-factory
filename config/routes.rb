@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     delete '/events/:id/remove_player' => 'events#remove_player'
   end
 
-  devise_for :users
+  devise_for :players
 
   root 'events#index'
 

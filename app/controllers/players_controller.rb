@@ -10,6 +10,7 @@ class PlayersController < ApplicationController
   # GET /players/1
   # GET /players/1.json
   def show
+    @events = Event.all
   end
 
   # GET /players/new
@@ -71,6 +72,6 @@ class PlayersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def player_params
-      params.require(:player).permit(:name, :surname, :nickname, :phone, :skype, :email, :locale)
+      params.require(:player).permit(:name, :surname, :nickname, :phone, :skype, :email, :password, :password_confirmation, :locale)
     end
 end

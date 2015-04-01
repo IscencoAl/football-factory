@@ -10,7 +10,16 @@
         %a{:href => players_path}= t('views.players.squad')
 
     %ul.nav.navbar-nav.navbar-right
+      -if current_player
+        %li
+          %a{:href => player_path(current_player)}=current_player.full_name
+            
+
+        %li
+          %a{:href => destroy_player_session_path, :data => {:method => 'delete'}} log out
+
       %li{:class => ("active" if locale == :ru)}
         =link_to 'Ru', :locale => :ru
       %li{:class => ("active" if locale == :en)}
         =link_to 'En', :locale => :en
+  
